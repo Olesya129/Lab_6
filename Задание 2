@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class laba {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("input num");
+        int num = in.nextInt();
+        while (!isPalindrome(Integer.toString(num))){
+            num += getReverese(num);
+        }
+        System.out.println(num);
+    }
+
+    public static boolean isPalindrome(String word) {
+        int length = word.length();
+        for (int i = 0; i < (length / 2); i++) {
+            if (word.charAt(i) != word.charAt(length - i - 1)) {
+                return false;
+            }
+        }
+        return true;
+    }
+    public static int getReverese(int num){
+        int reversed = 0;
+
+        for(;num != 0; num /= 10) {
+            int digit = num % 10;
+            reversed = reversed * 10 + digit;
+        }
+        return reversed;
+    }
+}
