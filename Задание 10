@@ -1,0 +1,18 @@
+import static java.lang.Math.*;
+
+public class laba {
+    public static void main(String[] args) {
+        double h;
+        double sum;
+        for (double n = 10; n <= 10000; n *= 10) {
+            h = 1 / n;
+            sum = 0;
+            double a = 1;
+            for (int i = 1; i <= n; i++) {
+                a += h;
+                sum += (5 * pow(a, 5) - 3 * pow(a, 3) + (a) * sin(a)) * h;
+            }
+            System.out.println("n: " + n + "     h: " + h + "    S: " + sum + "     42.69    " + (sum - 42.69));
+        }
+    }
+}
