@@ -1,0 +1,17 @@
+public class laba {
+    public static void main(String[] args) {
+        double product = 1; double sum = 0; double ans = 1;
+        for (int i = 1; i <= 8; i++){
+            for (int j = i; j <= 2 * i - 1; j++){
+                for (int k = 1; k <= 4; k++){
+                    product *= (2 * j + 3 * i - 0.5 * k);
+                }
+                sum += product;
+                product = 1;
+            }
+            ans *= sum;
+            sum = 0;
+        }
+        System.out.println(ans);
+    }
+}
